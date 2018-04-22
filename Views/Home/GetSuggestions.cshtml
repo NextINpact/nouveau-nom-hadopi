@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Toutes les suggestions";
+}
+
+@model SuggestionTableViewModel
+
+@if (Model.Suggestions.Any())
+{
+
+
+    <div class="list-group">
+        @foreach (var item in Model.Suggestions)
+        {
+
+            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">@item.SuggestionValue</h5>
+                    <span class="font-small"> <a asp-action="DoUpvote" class="do-upvote" data-id="@item.SuggestionID"><i class="fa fa-thumbs-up"></i> <span data-id="@item.SuggestionID" class="upvote-value">+@Model.DictionaryUpvotes.FirstOrDefault(x => x.Key == item.SuggestionID).Value</span></a></span>
+                    
+                </div>
+                <small class="mb-1">Proposé par @item.AuthorName le @item.DateSuggested.ToLocalTime().ToString("D")</small>
+              
+            </div>
+
+        }
+
+
+    </div>
+
+
+
+    <div class="d-flex flex-row justify-content-between">
+        <div class="p-2">
+            <a class="btn btn-grey" asp-action="GetSuggestions" asp-route-page="@Model.PrevPage" di> <i class="fa fa-arrow-left"></i>&nbsp;Page précédente </a>
+        </div>
+        <div class="p-2">
+            <a class="btn btn-grey" asp-action="GetSuggestions" asp-route-page="@Model.NextPage"> Page suivante &nbsp;<i class="fa fa-arrow-right"></i></a>
+        </div>
+
+
+
+    </div>
+
+}
+else
+{
+    <div class="text-center  big-ft-size text-grey"> <i class="far fa-meh "></i></div>
+    <div class="p-2 message-box text-center">
+
+
+        <span>Aucune proposition partagée, c'est dommage !&nbsp;<a asp-action="Index">Soyez le premier à proposer un nouveau nom pour la HADOPI.</a></span>
+
+    </div>
+
+}
+

@@ -1,0 +1,116 @@
+﻿@using AspNetCore.ClassicBundles
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quel Nom pour la HADOPI ?</title>
+
+
+    @*<link href="~/css/site.css" rel="stylesheet" />*@
+    @Styles.Render("~/css/site.bundle.css")
+    <!-- Font Awesome -->
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <wrapper class="d-flex flex-column">
+        <!--Main Navigation-->
+       
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" asp-action="Index" asp-controller="Home">Quel nom pour la HADOPI ?</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="GetSuggestions">Voir les propositions</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+  
+        <!--Main Navigation-->
+        <main role="main" class="container body-content flex-fill">
+            @RenderBody()
+        </main>
+
+
+        <!--Footer-->
+        @*<footer class="footer">
+            <div class="position-sticky">
+                <span class="text-muted">@DateTime.UtcNow.Year - ©<a href="https://www.nextinpact.com">INpact MediaGroup</a> </span>
+            </div>
+        </footer>*@
+        <div class="spy-footer container-fluid w-100 "></div>
+        <footer class="container-fluid w-100 bg-dark page-footer font-small pt-4 mt-4">
+            <div class="container-fluid text-center text-md-left">
+                <div class="row">
+
+                    <!--First column-->
+                    <div class="col-md-6">
+                        <h5 class="text-uppercase">
+                            <a href="https://www.nextinpact.com" target="_blank">
+                                <img src="~/images/logo-next.svg" class="logo-footer" />
+                            </a>
+                        </h5>
+                        <p>Site d'actualités High-tech depuis plus de 17 ans.</p>
+                    </div>
+                    <!--/.First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-6">
+                        <h5 class="text-uppercase">LIENS UTILES</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://www.nextinpact.com/news/106487-liste-noire-miroirs-francoise-nyssen-plaide-pour-hadopi-surarmee-et-rebaptisee.htm" target="_blank">Liste noire, miroirs : Françoise Nyssen plaide pour une Hadopi surarmée et rebaptisée</a>
+                            </li>
+                          
+                            <li>
+                                <a href="https://www.nextinpact.com/news/105715-la-hadopi-fait-son-bilan-sept-ans-riposte-graduee.htm" target="_blank">La Hadopi fait son bilan de sept ans de riposte graduée</a>
+                            </li>
+                            <li>
+                                <a href="https://www.hadopi.fr/" target="_blank">Site de l'actuelle HADOPI</a>
+                            </li>
+                            @*<li>
+                                <a href="#!">Link 4</a>
+                            </li>*@
+                        </ul>
+                    </div>
+                    <!--/.Second column-->
+                </div>
+            </div>
+            <!--/.Footer Links-->
+
+            <!--Copyright-->
+            <div class="py-3 text-center">
+                   <span>@DateTime.UtcNow.Year - ©<a href="https://www.nextinpact.com">INpact MediaGroup</a> </span>
+            </div>
+            <!--/.Copyright-->
+        </footer>
+    </wrapper>
+    <!--/.Footer-->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+    @*<script src="~/js/site.js"></script>*@
+    @Scripts.Render("~/js/site.bundle.js")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

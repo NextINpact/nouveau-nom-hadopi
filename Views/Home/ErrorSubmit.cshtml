@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = " - Votre contribution";
+}
+@model ErrorSuggestModel
+<div class="text-center  big-ft-size text-grey">
+    @switch (Model.State)
+    {
+        case SuggestionValidationState.SUGGESTIONUPVOTED:
+            <i class="fa fa-exclamation-circle"></i>
+            break;
+        case SuggestionValidationState.IPALREADYUSED:
+        case SuggestionValidationState.SUGGESTIONEXISTS:
+            <i class="fa fa-thumbs-down"></i>
+            break;
+
+    }
+
+</div>
+<div class=" p-2 message-box text-center">
+
+
+    @switch (Model.State)
+    {
+        case SuggestionValidationState.SUGGESTIONUPVOTED:
+            <span class="text-warning">Cette proposition existe déjà dans notre base de donnée. Nous avons ajouté un Upvote à cette proposition.</span>;
+            break;
+        case SuggestionValidationState.SUGGESTIONEXISTS:
+            <span class="text-warning">Cette proposition existe déjà dans notre base de donnée et vous avez déjà voté pour celle-ci.</span>;
+            break;
+        case SuggestionValidationState.IPALREADYUSED:
+            <span class="text-danger">Nous ne pouvons ajouter votre proposition car vous avez atteint la limite de propositions possibles.<br /><a asp-action="GetSuggestions"> Néanmoins, vous pouvez voter pour d'autres propositions </a></span>
+            break;
+
+    }
+
+</div>
+<div class="text-center p-2">
+    <a class="text-center" asp-action="GetSuggestions"> Voir toute les propositions</a> | <a asp-action="Index"> Retourner au formulaire </a>
+</div>
+
+

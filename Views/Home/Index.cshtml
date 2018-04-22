@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+@using AspNetCore.ClassicBundles
+@model SuggestNameModel
+
+
+<!-- Material form contact -->
+<form method="POST" asp-controller="Home" asp-action="SubmitResults" id="form-suggest" asp-antiforgery="true">
+   
+    <!-- Material input text -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" class="form-control" asp-for="UserName">
+        <label asp-for="UserName">Votre Nom</label>
+    </div>
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="email" class="form-control" asp-for="UserEmail">
+        <label asp-for="UserEmail">Votre email (facultatif)</label>
+    </div>
+
+
+    <!-- Material textarea message -->
+    <div class="md-form">
+        <i class="fa fa-pencil-alt prefix grey-text"></i>
+        <textarea type="text" class="form-control md-textarea" rows="3" asp-for="Proposition"></textarea>
+        <label asp-for="Proposition">Votre proposition</label>
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-outline-primary" type="submit">Envoyer<i class="fas fa-paper-plane ml-2"></i></button>
+    </div>
+   
+</form>
+<!-- Material form contact -->
+@section Scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.9/jquery.validate.unobtrusive.min.js"></script>
+
+    @Scripts.Render("~/js/validators.bundle.js")
+
+}
+    

@@ -1,0 +1,57 @@
+﻿.validation-box {
+    color: green;
+  
+}
+.message-box {
+    font-size: 22px;
+}
+.error-box {
+    color: red;
+
+}
+.big-ft-size {
+    font-size: 44px;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.body-content {
+    padding-top: 80px;
+}
+body > .container {
+    padding: 60px 15px 0;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+
+body, wrapper {
+    min-height:100vh;
+}
+
+.flex-fill {
+    flex:1 1 auto;
+}
+.logo-footer {
+    max-width: 100px;
+}
+
+.translatable-visible {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s, opacity 0.4s;
+}
+
+.translatable-notvisible {
+    transform: translateY(500px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.4s;
+}

@@ -1,0 +1,1 @@
+(function(n){var t={validClass:"valid",errorClass:"invalid",highlight:function(t,i,r){n(t).removeClass(r).addClass(i)},unhighlight:function(t,i,r){n(t).removeClass(i).addClass(r)}};n.validator.setDefaults(t);n.validator.unobtrusive.options={errorClass:t.errorClass,validClass:t.validClass}})(jQuery)
