@@ -48,7 +48,6 @@ namespace NomHadopi
             {
 
                 bundles.Add(new ScriptBundle("~/js/site.bundle.js")
-
                     .Include("~/js/site.js"));
 
                 bundles.Add(new StyleBundle("~/css/site.bundle.css")
