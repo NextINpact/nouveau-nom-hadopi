@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AspNetCore.ClassicBundles;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -44,21 +39,7 @@ namespace NomHadopi
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseBundles(env, bundles =>
-            {
-
-                bundles.Add(new ScriptBundle("~/js/site.bundle.js")
-                    .Include("~/js/site.js"));
-
-                bundles.Add(new StyleBundle("~/css/site.bundle.css")
-                      .Include("~/css/site.css"));
-
-
-                bundles.Add(new ScriptBundle("~/js/validators.bundle.js").Include("~/js/validators.js"));
-
-
-
-            });
+           
 
             app.UseStaticFiles();
             app.UseMvc(routes =>
